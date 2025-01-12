@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCY作文网</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* 使用更绚丽的渐变色背景，增加颜色的对比度 */
+            background: linear-gradient(135deg, #FF5733, #33FF99, #3399FF);
+            background-size: 600% 600%;
+            /* 加快动画速度，让背景变化更明显 */
+            animation: gradientAnimation 8s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+      .essay-content {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 400px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CCY作文网</h1>
+    </header>
+    <main>
+        <p>欢迎来到CCY作文网，这里汇聚了各类精彩的作文，为广大作文爱好者提供展示和学习的平台，希望你能在这里找到感兴趣的作文内容，尽情享受文字的魅力。</p>
+        <button onclick="showEssay('pizzaEssay')">披萨作文</button>
+        <button onclick="showEssay('travelEssay')">旅行作文</button>
+        <button onclick="showEssay('petEssay')">宠物作文</button>
+        <button onclick="showEssay('springEssay')">春天作文</button>
+        <button onclick="showEssay('friendshipEssay')">友谊作文</button>
+        <button onclick="showEssay('dreamEssay')">梦想作文</button>
+        <div id="essayDiv" class="essay-content"></div>
+    </main>
+
+    <script>
+        // 定义不同的作文内容
+        var pizzaEssay = "《美味的披萨》\n\n披萨，那可是一种令人垂涎欲滴的美食。当它从烤箱中被端出来时，热气腾腾，那股浓郁的香气瞬间弥漫在空气中，仿佛有一种无形的魔力，能立刻勾起人们的食欲。芝士在面饼上微微融化，如同金色的丝缕相互缠绕，轻轻一拉，便拉出长长的丝，像是在向人们展示它的独特魅力。\n\n饼底通常烤得金黄酥脆，一口咬下去，那清脆的‘嘎吱’声仿佛是一场美妙的演奏，在耳边奏响。而上面丰富的配料更是这场味觉盛宴的主角。鲜嫩的火腿片，每一口都充满了肉香；酸甜的番茄酱，如同灵动的音符，在舌尖上跳跃，为整个披萨增添了一抹清新的味道；翠绿的青椒，不仅带来了视觉上的清新，还在咀嚼间释放出独特的蔬菜香气；还有那浓郁醇厚的芝士，它的存在让所有的食材完美融合在一起，在口腔中奏响一曲和谐的味觉交响乐。\n\n无论是和朋友们一起围坐在餐桌旁，分享着一个大大的披萨，欢声笑语回荡在房间里；还是在忙碌的一天后，独自享受一个属于自己的小披萨，那种满足感和幸福感都能瞬间驱散所有的疲惫。披萨，已经不仅仅是一种食物，它更成为了人们生活中美好时光的见证者，深受大家的喜爱。每当周末的午后，阳光透过窗户洒在餐桌上，我总会点上一个自己最爱的夏威夷披萨，菠萝的酸甜与火腿、芝士的搭配堪称一绝，一口下去，满满的都是幸福的味道。这种简单而纯粹的快乐，或许就是披萨的魅力所在吧。";
+
+        var travelEssay = "《难忘的旅行》\n\n那是一次难忘的旅行，我踏上了前往神秘而美丽的云南之旅。从踏上那片土地的那一刻起，我就被它独特的魅力所吸引。\n\n第一站是大理，阳光洒在古老的大理古城上，斑驳的城墙诉说着岁月的故事。我漫步在古城的石板路上，街边的小店琳琅满目，充满了民族特色。空气中弥漫着淡淡的花香和烤乳扇的香气，让人陶醉其中。洱海，宛如一颗巨大的蓝色宝石镶嵌在这片土地上，湖水清澈见底，波光粼粼。我租了一辆自行车，沿着洱海骑行，微风拂面，带来湖水的气息，远处的苍山连绵起伏，山顶的积雪在阳光的照耀下闪闪发光，仿佛一幅绝美的山水画卷。\n\n接着，我来到了丽江。丽江古城的夜晚热闹非凡，灯火辉煌。酒吧里传来悠扬的歌声，人们在这里尽情地享受着生活的美好。我穿梭在古城的小巷中，感受着纳西族的传统文化。玉龙雪山，那是一座神圣而庄严的山峰，当我站在山脚下仰望它时，心中充满了敬畏之情。乘坐缆车缓缓而上，随着海拔的升高，景色也变得越来越壮观。山上的植被逐渐变得稀疏，最后只剩下皑皑白雪和裸露的岩石。站在山顶，俯瞰着周围的一切，仿佛自己置身于仙境之中，所有的烦恼都被抛到了九霄云外。\n\n这次旅行不仅让我欣赏到了大自然的美丽风光，还让我领略到了不同民族的文化魅力。它让我开阔了眼界，增长了见识，也让我更加热爱生活。这次旅行将永远深深地印在我的记忆深处，成为我人生中最宝贵的财富之一。在旅途中，我还结识了许多来自不同地方的旅行者，我们一起分享着旅途中的趣事和心得，那些短暂而美好的相遇，也为我的旅行增添了许多温暖的色彩。";
+
+        var petEssay = "《我的可爱宠物》\n\n我有一只可爱的宠物猫，它叫咪咪。咪咪有着一身柔软如云朵般的白色绒毛，摸起来十分舒服，就像在触摸最上等的丝绸。它的眼睛又大又圆，像两颗明亮的宝石，在黑暗中闪烁着神秘的光芒。\n\n咪咪特别调皮，总是充满了无尽的活力。它最喜欢在家里上蹿下跳，把家里当成它的游乐场。客厅里的沙发、茶几，甚至是高高的衣柜，都留下了它的足迹。它最喜欢玩的就是一个小小的毛线球，每当看到毛线球，它的眼睛就会立刻亮起来，仿佛看到了最心爱的宝贝。它会追着毛线球跑来跑去，一会儿扑向左边，一会儿扑向右边，那憨态可掬的模样让人忍俊不禁。不一会儿，毛线就被它弄得乱七八糟，整个房间就像经历了一场‘小灾难’，但它却像个没事人一样，一脸无辜地看着我，让人又好气又好笑。\n\n但它也很乖巧，每当我回到家，它都会立刻像一阵风一样跑过来，在我脚边蹭来蹭去，发出温柔的‘喵喵’叫声，好像在说‘主人，你终于回来啦，我好想你’。它还会用它的小脑袋轻轻地顶我的手，示意我抱抱它。当我把它抱在怀里时，它就会舒服地闭上眼睛，喉咙里发出咕噜咕噜的声音，那一刻，我感受到了它对我的深深依赖和信任。\n\n咪咪给我的生活带来了无尽的欢乐和温暖，它不仅仅是我的宠物，更是我最亲密的伙伴，陪伴我度过每一个美好的日子。每天晚上，它都会跳上我的床，蜷缩在我的脚边，和我一起进入甜美的梦乡，有它在身边，我总是感觉特别安心。";
+
+        var springEssay = "《春天的旋律》\n\n春天，是大自然奏响的一曲最美的旋律。当冬日的寒风渐渐退去，春天的脚步便轻盈地走来。\n\n田野里，嫩绿的小草从土里探出了头，好奇地张望着这个崭新的世界。它们像是给大地铺上了一层柔软的绿地毯，踩在上面，软绵绵的。五颜六色的野花这儿一丛，那儿一簇，竞相开放。红的像火，粉的像霞，白的像雪，它们在微风中摇曳生姿，仿佛在欢快地舞蹈。\n\n河边的柳树也抽出了嫩绿的新芽，细长的柳枝垂落在水面上，像是一位位亭亭玉立的少女在对着镜子梳妆打扮。春风拂过，柳枝翩翩起舞，那优美的姿态让人陶醉。\n\n天空中，鸟儿们欢快地飞翔着，叽叽喳喳地叫着，仿佛在诉说着春天的美好。它们一会儿排成‘人’字形，一会儿排成‘一’字形，为春天的天空增添了几分灵动的色彩。\n\n春天，也是农民伯伯们忙碌的季节。他们在田野里辛勤地播种，播下了希望的种子，也播下了对未来的憧憬。看着他们忙碌的身影，我仿佛看到了秋天丰收的景象。\n\n春天，充满了生机与活力，它让大地焕发出新的光彩，让世间万物都充满了希望。我爱这美丽的春天，爱它的一切。当春天的阳光洒在身上，那种温暖而柔和的感觉，仿佛能驱散心中所有的阴霾，让人的心情也变得格外舒畅。";
+
+        var friendshipEssay = "《珍贵的友谊》\n\n友谊，是人生中最珍贵的宝藏之一。它如同温暖的阳光，照亮我们前行的道路；又像一阵清风，在我们烦恼时带来慰藉。\n\n我和我的好朋友小明相识于小学时代。那时候，我们在同一个班级，因为都喜欢画画而走到了一起。还记得有一次学校组织绘画比赛，我们一起努力准备，每天放学后都留在教室里练习。遇到困难时，我们互相鼓励，互相帮助。虽然最后我们都没有获得一等奖，但通过这次比赛，我们的友谊更加深厚了。\n\n在生活中，小明也是一个非常贴心的朋友。有一次我生病请假在家，落下了很多功课。小明知道后，每天放学后都会来我家给我补习。他耐心地给我讲解每一道题目，直到我完全明白为止。在他的帮助下，我的功课不仅没有落下，反而有了很大的进步。\n\n随着时间的推移，我们一起度过了许多美好的时光。我们一起在公园里放风筝，一起在图书馆里看书，一起在海边看日落。那些快乐的回忆，就像一颗颗璀璨的星星，镶嵌在我的记忆长河中。\n\n友谊，不需要华丽的辞藻去修饰，也不需要惊天动地的事迹去证明。它体现在生活中的点点滴滴，是在你需要时伸出的援手，是在你难过时给予的安慰。我相信，我和小明的友谊会一直延续下去，无论未来遇到什么困难，我们都会一起面对。因为真正的友谊，是经得起时间考验的。";
+
+        var dreamEssay = "《追逐梦想的旅程》\n\n每个人都有自己的梦想，它就像一盏明灯，照亮我们前行的道路；又像一座灯塔，在茫茫大海中为我们指引方向。我的梦想是成为一名优秀的作家。\n\n小时候，我就对文字有着浓厚的兴趣。每当我翻开一本好书，就仿佛进入了一个全新的世界，那里有奇妙的冒险，有感人的故事，还有各种各样有趣的人物。我被那些优美的文字所吸引，心中渐渐萌生出一个想法：我也要写出这样精彩的故事，让更多的人感受到文字的魅力。\n\n为了实现这个梦想，我开始大量阅读各种书籍。无论是文学名著，还是科幻小说，我都爱不释手。通过阅读，我积累了丰富的词汇，学习到了很多写作技巧。同时，我也开始尝试自己写作。从最初的简短日记，到后来的记叙文、散文，我不断地努力，不断地进步。\n\n在追逐梦想的过程中，我也遇到了很多困难。有时候，我会因为写不出满意的作品而感到沮丧；有时候，我会因为别人的批评而感到失落。但是，我从来没有想过放弃。因为我知道，每一次的挫折都是成长的机会，只要我坚持不懈，就一定能够离我的梦想越来越近。\n\n我相信，只要我怀揣着对写作的热爱，不断努力，不断学习，总有一天，我能够实现自己的梦想，成为一名真正的作家。我要用我的文字，去描绘这个美好的世界，去传递正能量，去触动人们的心灵。追逐梦想的旅程或许充满艰辛，但我愿意为了心中的梦想，勇往直前。";
+
+        function showEssay(essayType) {
+            var essayDiv = document.getElementById('essayDiv');
+            var currentDisplayed = essayDiv.style.display === 'block';
+            if (currentDisplayed) {
+                essayDiv.style.display = 'none';
+            }
+            setTimeout(() => {
+                if (essayType === 'pizzaEssay') {
+                    essayDiv.innerHTML = pizzaEssay;
+                } else if (essayType === 'travelEssay') {
+                    essayDiv.innerHTML = travelEssay;
+                } else if (essayType === 'petEssay') {
+                    essayDiv.innerHTML = petEssay;
+                } else if (essayType ==='springEssay') {
+                    essayDiv.innerHTML = springEssay;
+                } else if (essayType === 'friendshipEssay') {
+                    essayDiv.innerHTML = friendshipEssay;
+                } else if (essayType === 'dreamEssay') {
+                    essayDiv.innerHTML = dreamEssay;
+                }
+                essayDiv.style.display = 'block';
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>
+
